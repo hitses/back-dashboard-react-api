@@ -4,7 +4,7 @@ import sequelize from '../../config/db.js'
 const RecentSales = sequelize.define(
   'RecentSale',
   {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    _id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     number: { type: DataTypes.STRING, allowNull: false },
     customer: { type: DataTypes.STRING, allowNull: false },
     product: { type: DataTypes.STRING, allowNull: false },

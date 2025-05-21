@@ -4,7 +4,7 @@ import sequelize from '../../config/db.js'
 const New = sequelize.define(
   'New',
   {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    _id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     img: { type: DataTypes.STRING, allowNull: false },
     title: { type: DataTypes.STRING, allowNull: false },
     subtitle: { type: DataTypes.STRING, allowNull: false },

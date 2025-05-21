@@ -4,7 +4,7 @@ import sequelize from '../../config/db.js'
 const TopSelling = sequelize.define(
   'TopSelling',
   {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    _id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     preview: { type: DataTypes.STRING, allowNull: false },
     name: { type: DataTypes.STRING, allowNull: false },
     price: { type: DataTypes.INTEGER, allowNull: false },
