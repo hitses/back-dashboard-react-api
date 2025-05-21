@@ -1,4 +1,4 @@
-import cardModel from '../models/Cards.js'
+import cardModel from '../models/Card.js'
 
 import defaultCards from '../data/cards.js'
 

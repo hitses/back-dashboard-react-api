@@ -14,7 +14,7 @@ class CardsController {
       const cards = await this.service.getAllCards()
       res.json(cards)
     } catch (error) {
-      res.status(500).json({ error: 'Error getting cards' })
+      res.status(500).json({ error: 'Error getting Cards' })
     }
   }
 
