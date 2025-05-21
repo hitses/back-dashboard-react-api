@@ -19,6 +19,10 @@ const startServer = async () => {
       await import('./src/routes/topSellingsRoutes.js')
     ).default
     app.use('/top-sellings', topSellingsRoutes)
+    const recentSalesRoutes = (
+      await import('./src/routes/recentSalesRoutes.js')
+    ).default
+    app.use('/recent-sales', recentSalesRoutes)
 
     app.listen(PORT, () => {
       console.log(`Server listening on port ${PORT}: http://localhost:${PORT}`)

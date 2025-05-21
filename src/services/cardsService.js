@@ -62,7 +62,7 @@ class CardsService {
 
   async seedDefaultCards() {
     for (const card of defaultCards) {
-      const exists = await cardModel.findByPk(card.id)
+      const exists = await cardModel.findByPk(card._id)
       if (!exists) {
         await cardModel.create(card)
       }

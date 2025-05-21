@@ -1,6 +1,6 @@
 const defaultCards = [
   {
-    id: 1,
+    _id: 1,
     name: 'Sales',
     icon: 'bi bi-cart',
     amount: 145,
@@ -8,7 +8,7 @@ const defaultCards = [
     active: true
   },
   {
-    id: 2,
+    _id: 2,
     name: 'Revenue',
     icon: 'bi bi-currency-dollar',
     amount: 3246,
@@ -16,7 +16,7 @@ const defaultCards = [
     active: false
   },
   {
-    id: 3,
+    _id: 3,
     name: 'Customers',
     icon: 'bi bi-people',
     amount: 1244,

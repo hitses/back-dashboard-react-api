@@ -62,7 +62,7 @@ class TopSellingsService {
 
   async seedDefaultTopSellings() {
     for (const topSelling of defaultTopSellings) {
-      const exists = await topSellingModel.findByPk(topSelling.id)
+      const exists = await topSellingModel.findByPk(topSelling._id)
       if (!exists) {
         await topSellingModel.create(topSelling)
       }

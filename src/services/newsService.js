@@ -62,7 +62,7 @@ class NewsService {
 
   async seedDefaultNews() {
     for (const news of defaultNews) {
-      const exists = await newModel.findByPk(news.id)
+      const exists = await newModel.findByPk(news._id)
       if (!exists) {
         await newModel.create(news)
       }

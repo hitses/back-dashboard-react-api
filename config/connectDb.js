@@ -1,8 +1,10 @@
 import createDb from './createDb.js'
 import sequelize from './db.js'
+
 import '../src/models/Card.js'
 import '../src/models/New.js'
 import '../src/models/TopSelling.js'
+import '../src/models/RecentSale.js'
 
 const connectDb = async () => {
   await createDb()
