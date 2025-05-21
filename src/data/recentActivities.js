@@ -1,4 +1,4 @@
-const defaultRecentActivity = [
+const defaultRecentActivities = [
   {
     _id: 1,
     time: '32 min',
@@ -43,4 +43,4 @@ const defaultRecentActivity = [
   }
 ]
 
-export default defaultRecentActivity
+export default defaultRecentActivities

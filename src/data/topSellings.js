@@ -1,4 +1,4 @@
-const defaultTopSelling = [
+const defaultTopSellings = [
   {
     _id: 1,
     preview: '../assets/items/product-1.jpg',
@@ -36,4 +36,4 @@ const defaultTopSelling = [
   }
 ]
 
-export default defaultTopSelling
+export default defaultTopSellings
