@@ -1,5 +1,6 @@
 import express, { json } from 'express'
 import connectDb from './config/connectDb.js'
+import { corsMiddleware } from './middlewares/cors.js'
 
 const startServer = async () => {
   try {
@@ -8,6 +9,7 @@ const startServer = async () => {
     const app = express()
     const PORT = process.env.PORT ?? 3000
 
+    app.use(corsMiddleware())
     app.use(json())
     app.disable('x-powered-by')
 
