@@ -1,21 +1,25 @@
 import express, { json } from 'express'
-import './config/connectDb.js'
+import connectDb from './config/connectDb.js'
 
-import './middlewares/cors.js'
+const startServer = async () => {
+  try {
+    await connectDb()
 
-import usersRoutes from './src/routes/usersRoutes.js'
+    const app = express()
+    const PORT = process.env.PORT ?? 3000
 
-const app = express()
-const PORT = process.env.PORT ?? 3000
+    app.use(json())
+    app.disable('x-powered-by')
 
-// Middleware
-app.use(json())
-app.disable('x-powered-by')
+    const cardsRoutes = (await import('./src/routes/cardsRoutes.js')).default
+    app.use('/cards', cardsRoutes)
 
-// Rutas
-app.use('/users', usersRoutes)
+    app.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}: http://localhost:${PORT}`)
+    })
+  } catch (error) {
+    console.error('Fallo al iniciar el servidor:', error)
+  }
+}
 
-// Iniciar servidor
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}: http://localhost:${PORT}`)
-})
+startServer()

@@ -1,9 +1,8 @@
 import createDb from './createDb.js'
 import sequelize from './db.js'
+import '../src/models/Cards.js'
 
-import '../src/models/User.js'
-
-const start = async () => {
+const connectDb = async () => {
   await createDb()
 
   try {
@@ -14,7 +13,8 @@ const start = async () => {
     console.log('Todas las tablas sincronizadas correctamente')
   } catch (error) {
     console.error('Error al conectar o sincronizar:', error)
+    throw error
   }
 }
 
-start()
+export default connectDb
