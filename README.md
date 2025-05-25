@@ -6,6 +6,8 @@ Este servidor se encarga de manejar las solicitudes de los clientes y proporcion
 
 ## Instalación
 
+Es necesario tener instalado [Node.js](https://nodejs.org/es) en el sistema para poder ejecutar el servidor en la versión 22.X.X (versión usada 22.13.0) o superior.
+
 Para instalar las dependencias necesarias, ejecuta el siguiente comando en la terminal:
 
 ```bash
