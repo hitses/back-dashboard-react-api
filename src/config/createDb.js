@@ -16,7 +16,7 @@ const createDb = async () => {
 
   if (results.length === 0) {
     await tempSequelize.query(`CREATE DATABASE ${database};`)
-    console.log(`Base de datos '${database}' creada correctamente`)
+    console.log(`Data base ${database} has been created successfully`)
   }
 
   await tempSequelize.close()
