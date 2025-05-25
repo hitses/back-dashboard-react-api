@@ -9,6 +9,7 @@ class NewsController {
     })
   }
 
+  // Método para obtener todas las noticias
   async getAllNews(req, res) {
     try {
       const news = await this.service.getAllNews()
@@ -18,6 +19,7 @@ class NewsController {
     }
   }
 
+  // Método para obtener una noticia por ID
   async getNewById(req, res) {
     try {
       const news = await this.service.getNewById(req.params.id)
@@ -27,6 +29,7 @@ class NewsController {
     }
   }
 
+  // Método para crear una noticia
   async createNew(req, res) {
     try {
       const news = await this.service.createNew(req.body)
@@ -36,6 +39,7 @@ class NewsController {
     }
   }
 
+  // Método para actualizar una noticia por ID
   async updateNew(req, res) {
     try {
       const news = await this.service.updateNew(req.params.id, req.body)
@@ -45,6 +49,7 @@ class NewsController {
     }
   }
 
+  // Método para eliminar una noticia por ID
   async deleteNew(req, res) {
     try {
       await this.service.deleteNew(req.params.id)

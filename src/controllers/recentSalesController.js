@@ -9,6 +9,7 @@ class RecentSalesController {
     })
   }
 
+  // Método para obtener todas las ventas recientes
   async getAllRecentSales(req, res) {
     try {
       const recentSales = await this.service.getAllRecentSales()
@@ -18,6 +19,7 @@ class RecentSalesController {
     }
   }
 
+  // Método para obtener una venta reciente por ID
   async getRecentSaleById(req, res) {
     try {
       const recentSale = await this.service.getRecentSaleById(req.params.id)
@@ -27,6 +29,7 @@ class RecentSalesController {
     }
   }
 
+  // Método para crear una venta reciente
   async createRecentSale(req, res) {
     try {
       const recentSale = await this.service.createRecentSale(req.body)
@@ -36,6 +39,7 @@ class RecentSalesController {
     }
   }
 
+  // Método para actualizar una venta reciente por ID
   async updateRecentSale(req, res) {
     try {
       const recentSale = await this.service.updateRecentSale(
@@ -48,6 +52,7 @@ class RecentSalesController {
     }
   }
 
+  // Método para eliminar una venta reciente por ID
   async deleteRecentSale(req, res) {
     try {
       await this.service.deleteRecentSale(req.params.id)

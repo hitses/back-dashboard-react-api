@@ -9,6 +9,7 @@ class CardsController {
     })
   }
 
+  // Método para obtener todas las tarjetas
   async getAllCards(req, res) {
     try {
       const cards = await this.service.getAllCards()
@@ -18,6 +19,7 @@ class CardsController {
     }
   }
 
+  // Método para obtener una tarjeta por ID
   async getCardById(req, res) {
     try {
       const card = await this.service.getCardById(req.params.id)
@@ -27,6 +29,7 @@ class CardsController {
     }
   }
 
+  // Método para crear una tarjeta
   async createCard(req, res) {
     try {
       const card = await this.service.createCard(req.body)
@@ -36,6 +39,7 @@ class CardsController {
     }
   }
 
+  // Método para actualizar una tarjeta por ID
   async updateCard(req, res) {
     try {
       const card = await this.service.updateCard(req.params.id, req.body)
@@ -45,6 +49,7 @@ class CardsController {
     }
   }
 
+  // Método para eliminar una tarjeta por ID
   async deleteCard(req, res) {
     try {
       await this.service.deleteCard(req.params.id)

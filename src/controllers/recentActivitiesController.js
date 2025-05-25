@@ -9,6 +9,7 @@ class RecentActivitiesController {
     })
   }
 
+  // Método para obtener todas las actividades recientes
   async getAllRecentActivities(req, res) {
     try {
       const recentActivities = await this.service.getAllRecentActivities()
@@ -18,6 +19,7 @@ class RecentActivitiesController {
     }
   }
 
+  // Método para obtener una actividad reciente por ID
   async getRecentActivityById(req, res) {
     try {
       const recentActivity = await this.service.getRecentActivityById(
@@ -29,6 +31,7 @@ class RecentActivitiesController {
     }
   }
 
+  // Método para crear una actividad reciente
   async createRecentActivity(req, res) {
     try {
       const recentActivity = await this.service.createRecentActivity(req.body)
@@ -38,6 +41,7 @@ class RecentActivitiesController {
     }
   }
 
+  // Método para actualizar una actividad reciente por ID
   async updateRecentActivity(req, res) {
     try {
       const recentActivity = await this.service.updateRecentActivity(
@@ -50,6 +54,7 @@ class RecentActivitiesController {
     }
   }
 
+  // Método para eliminar una actividad reciente por ID
   async deleteRecentActivity(req, res) {
     try {
       await this.service.deleteRecentActivity(req.params.id)

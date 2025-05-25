@@ -8,6 +8,7 @@ class RecentSalesService {
     await this.seedDefaultRecentSales()
   }
 
+  // Método para obtener todas las ventas recientes
   async getAllRecentSales() {
     try {
       return await recentSaleModel.findAll()
@@ -16,6 +17,7 @@ class RecentSalesService {
     }
   }
 
+  // Método para obtener una venta reciente por ID
   async getRecentSaleById(recentSaleId) {
     try {
       const recentSale = await recentSaleModel.findByPk(recentSaleId)
@@ -28,6 +30,7 @@ class RecentSalesService {
     }
   }
 
+  // Método para crear una venta reciente
   async createRecentSale(recentSaleData) {
     try {
       return await recentSaleModel.create(recentSaleData)
@@ -36,9 +39,10 @@ class RecentSalesService {
     }
   }
 
+  // Método para actualizar una venta reciente por ID
   async updateRecentSale(recentSaleId, recentSaleData) {
     try {
-      const recentSale = await recentSaleModel.findByPk(recentSaleId)
+      const recentSale = await this.getRecentSaleById(recentSaleId)
 
       if (!recentSale) throw new Error('RecentSale not found')
 
@@ -48,9 +52,10 @@ class RecentSalesService {
     }
   }
 
+  // Método para eliminar una venta reciente por ID
   async deleteRecentSale(recentSaleId) {
     try {
-      const recentSale = await recentSaleModel.findByPk(recentSaleId)
+      const recentSale = await this.getRecentSaleById(recentSaleId)
 
       if (!recentSale) throw new Error('RecentSale not found')
 
@@ -60,6 +65,7 @@ class RecentSalesService {
     }
   }
 
+  // Método para crear ventas recientes por semilla al iniciar el servidor
   async seedDefaultRecentSales() {
     for (const recentSale of defaultRecentSales) {
       const exists = await recentSaleModel.findByPk(recentSale._id)

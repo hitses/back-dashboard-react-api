@@ -9,6 +9,7 @@ class TopSellingsController {
     })
   }
 
+  // Método para obtener todas el top de ventas
   async getAllTopSellings(req, res) {
     try {
       const topSellings = await this.service.getAllTopSellings()
@@ -18,6 +19,7 @@ class TopSellingsController {
     }
   }
 
+  // Método para obtener un top de ventas por ID
   async getTopSellingById(req, res) {
     try {
       const topSelling = await this.service.getTopSellingById(req.params.id)
@@ -27,6 +29,7 @@ class TopSellingsController {
     }
   }
 
+  // Método para crear un top de ventas
   async createTopSelling(req, res) {
     try {
       const topSelling = await this.service.createTopSelling(req.body)
@@ -36,6 +39,7 @@ class TopSellingsController {
     }
   }
 
+  // Método para actualizar un top de ventas por ID
   async updateTopSelling(req, res) {
     try {
       const topSelling = await this.service.updateTopSelling(
@@ -48,6 +52,7 @@ class TopSellingsController {
     }
   }
 
+  // Método para eliminar un top de ventas por ID
   async deleteTopSelling(req, res) {
     try {
       await this.service.deleteTopSelling(req.params.id)

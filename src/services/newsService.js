@@ -8,6 +8,7 @@ class NewsService {
     await this.seedDefaultNews()
   }
 
+  // Método para obtener todas las noticias
   async getAllNews() {
     try {
       return await newModel.findAll()
@@ -16,6 +17,7 @@ class NewsService {
     }
   }
 
+  // Método para obtener una noticia por ID
   async getNewById(newId) {
     try {
       const news = await newModel.findByPk(newId)
@@ -28,6 +30,7 @@ class NewsService {
     }
   }
 
+  // Método para crear una noticia
   async createNew(newData) {
     try {
       return await newModel.create(newData)
@@ -36,9 +39,10 @@ class NewsService {
     }
   }
 
+  // Método para actualizar una noticia por ID
   async updateNew(newId, newData) {
     try {
-      const news = await newModel.findByPk(newId)
+      const news = await this.getNewById(newId)
 
       if (!news) throw new Error('New not found')
 
@@ -48,9 +52,10 @@ class NewsService {
     }
   }
 
+  // Método para eliminar una noticia por ID
   async deleteNew(newId) {
     try {
-      const news = await newModel.findByPk(newId)
+      const news = await this.getNewById(newId)
 
       if (!news) throw new Error('New not found')
 
@@ -60,6 +65,7 @@ class NewsService {
     }
   }
 
+  // Método para crear noticias por semilla al iniciar el servidor
   async seedDefaultNews() {
     for (const news of defaultNews) {
       const exists = await newModel.findByPk(news._id)

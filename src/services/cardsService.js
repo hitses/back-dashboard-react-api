@@ -8,6 +8,7 @@ class CardsService {
     await this.seedDefaultCards()
   }
 
+  // Método para obtener todas las tarjetas
   async getAllCards() {
     try {
       return await cardModel.findAll()
@@ -16,6 +17,7 @@ class CardsService {
     }
   }
 
+  // Método para obtener una tarjeta por ID
   async getCardById(cardId) {
     try {
       const card = await cardModel.findByPk(cardId)
@@ -28,6 +30,7 @@ class CardsService {
     }
   }
 
+  // Método para crear una tarjeta
   async createCard(cardData) {
     try {
       return await cardModel.create(cardData)
@@ -36,9 +39,10 @@ class CardsService {
     }
   }
 
+  // Método para actualizar una tarjeta por ID
   async updateCard(cardId, cardData) {
     try {
-      const card = await cardModel.findByPk(cardId)
+      const card = await this.getCardById(cardId)
 
       if (!card) throw new Error('Card not found')
 
@@ -48,9 +52,10 @@ class CardsService {
     }
   }
 
+  // Método para eliminar una tarjeta por ID
   async deleteCard(cardId) {
     try {
-      const card = await cardModel.findByPk(cardId)
+      const card = await this.getCardById(cardId)
 
       if (!card) throw new Error('Card not found')
 
@@ -60,6 +65,7 @@ class CardsService {
     }
   }
 
+  // Método para crear tarjetas por semilla al iniciar el servidor
   async seedDefaultCards() {
     for (const card of defaultCards) {
       const exists = await cardModel.findByPk(card._id)

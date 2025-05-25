@@ -8,6 +8,7 @@ class TopSellingsService {
     await this.seedDefaultTopSellings()
   }
 
+  // Método para obtener todos los top de ventas
   async getAllTopSellings() {
     try {
       return await topSellingModel.findAll()
@@ -16,6 +17,7 @@ class TopSellingsService {
     }
   }
 
+  // Método para obtener un top de ventas por ID
   async getTopSellingById(topSellingId) {
     try {
       const topSelling = await topSellingModel.findByPk(topSellingId)
@@ -28,6 +30,7 @@ class TopSellingsService {
     }
   }
 
+  // Método para crear un top de ventas
   async createTopSelling(topSellingData) {
     try {
       return await topSellingModel.create(topSellingData)
@@ -36,9 +39,10 @@ class TopSellingsService {
     }
   }
 
+  // Método para actualizar un top de ventas por ID
   async updateTopSelling(topSellingId, topSellingData) {
     try {
-      const topSelling = await topSellingModel.findByPk(topSellingId)
+      const topSelling = await this.getTopSellingById(topSellingId)
 
       if (!topSelling) throw new Error('TopSelling not found')
 
@@ -48,9 +52,10 @@ class TopSellingsService {
     }
   }
 
+  // Método para eliminar un top de ventas por ID
   async deleteTopSelling(topSellingId) {
     try {
-      const topSelling = await topSellingModel.findByPk(topSellingId)
+      const topSelling = await this.getTopSellingById(topSellingId)
 
       if (!topSelling) throw new Error('TopSelling not found')
 
@@ -60,6 +65,7 @@ class TopSellingsService {
     }
   }
 
+  // Método para crear top de ventas por semilla al iniciar el servidor
   async seedDefaultTopSellings() {
     for (const topSelling of defaultTopSellings) {
       const exists = await topSellingModel.findByPk(topSelling._id)
