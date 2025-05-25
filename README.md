@@ -1,6 +1,6 @@
 # Backend dashboard de React
 
-Este servidor se encarga de manejar las solicitudes de los clientes y proporcionar información de las bases de datos para el proyecto de [Dashboard de React](https://github.com/jeronimo-des/dashboard-react).
+Este servidor se encarga de manejar las solicitudes de los clientes y proporcionar información de las bases de datos para el proyecto de [Dashboard de React](https://github.com/hitses/front-dashboard-react-api).
 
 <!-- LINK AL REPOSITORIO DE LA APLICACIÓN REACT -->
 
